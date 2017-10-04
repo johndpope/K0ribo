@@ -1,0 +1,1 @@
+Zeit;Preis;Anz. Transaktionen letzten x Minuten; Anz Übertragener Coins in den letzten x Minuten
