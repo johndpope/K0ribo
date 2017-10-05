@@ -62,16 +62,4 @@ while True:
         #print((datetime.utcnow().timestamp()-history_store[i][len(history_store[i])-1].ts.timestamp())/60)
         #print(len(history_store[i]))
     time.sleep(20)
-print(len(history))
-with open("history.json",'w') as file_history:
-    file_history.write(str(history))
-file_trading = open('trading.json', 'r')
-json_trading = json.load(file_trading)
-file_trading.close()
-while True:
-    for market in json_trading:
-        tick = str(my_bitterx.get_ticker(market).get('result')['Last'])+";"+str(time.time())
-        with open(market+'.json','a') as file_ouput_tick:
-            file_ouput_tick.write("\n"+str(tick))
-    time.sleep(10)
 
