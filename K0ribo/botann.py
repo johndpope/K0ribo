@@ -33,7 +33,7 @@ def input_fn(data_file, num_epochs, shuffle):
       names=CSV_COLUMNS,
       skipinitialspace=True,
       engine="python",
-      skiprows=1)
+      skiprows=0)
       return tf.estimator.inputs.pandas_input_fn(
         x=df_data,
         y=None,
