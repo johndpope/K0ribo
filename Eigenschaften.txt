@@ -1,1 +1,3 @@
 akt_Zeit;akt_Preis;transaktionen_letzten_5_min;übertragene_Coins_letzten_5_Minuten;Veränderung_letzten_5_Minuten;Veränderung_letzten_15_Minuten;Veränderung_letzten_30_Minuten
+
+Output alle 5 Minuten

@@ -1,0 +1,7 @@
+from wallet import Wallet
+from getpass import _raw_input
+
+wallet = Wallet()
+wallet.start()
+wallet.buy("OMG",2,0.001)
+c = _raw_input("Eingabe.")

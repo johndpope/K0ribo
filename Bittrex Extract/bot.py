@@ -34,7 +34,7 @@ class Out_element1:
         self.t0_price = t0_price
 
     def getIterable(self):
-        return [self.minutes, self.trans_amount, self.coin_amount, self.change_sm, self.change_md, self.change_lg, self.akt_price]
+        return [self.minutes, str(self.price), str(self.trans_amount), str(self.coin_amount), str(self.change_sm), str(self.change_md), str(self.change_lg), str(self.akt_price), str(self.t0_price)]
 
 #settings
 CHANGE_SM = 5*60 #seconds
@@ -120,6 +120,6 @@ def brain_result(b):
 
 
 start_new_thread(hist_fetch,(1,))
-time.sleep(60*30)
+time.sleep(60*5)
 start_new_thread(brain_result,(2,))
 c = _raw_input("Eingabe.")
