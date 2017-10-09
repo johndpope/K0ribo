@@ -1,5 +1,6 @@
 import tensorflow as tf
 import os
+import collections
 
 
 '''
@@ -16,18 +17,18 @@ CSV_COLUMNS = ["minutes","price","trans_amount","coin_amount","change_sm","chang
 
 #read csv
 
-n_nodes_hl1= 500
-n_nodes_hl2 = 500
-n_nodes_hl3 = 500
+n_nodes_hl1= 50
+n_nodes_hl2 = 50
+n_nodes_hl3 = 50
 
 n_classes = 1
 batch_size = 100
 
+batch_counter = 0
+
 input_data = []
 input_data_result = []
 
-training_data = []
-train_data = []
 
 #
 x = tf.placeholder('float',[None, 7])
@@ -76,9 +77,52 @@ def neural_network_model(data):
     
     return output
 
+def train_neural_network(x):
+    prediction = neural_network_model(x)
+    cost = tf.reduce_sum(tf.square(expected - y))
+    #                       learning rate = 0.001
+    optimizer = tf.train.AdamOptimizer().minimize(cost)
+
+    #ressourcen intensiv // durchgänge feed forward + back prop
+    hm_epochs = 5
+
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+
+        for epoch in hm_epochs:
+            epoch_loss = 0
+            for _ in range(int(len(input_data)/batch_size)):
+                x, y = input_data.train.next_batch(batch_size)
+                _, c = sess.run([optimizer,cost], feed_dict={x: x, y: y})
+                # tf weiß dass die weights angepasst werden mussen
+                epoch_loss += c
+
+                print('Epoch',epoch,'complete out of ',hm_epochs, ' loss: ',epoch_loss)
+
+        corr = tf.approximate_equal(prediction, y)
+        accuracy = tf.sub(prediction, y)
+
+#useless?
+def next_batch(batchSize):
+    Batch = collections.namedtuple('Batch',['x','y'])
+    train_data = []
+    train_result_data = []
+
+    for _ in range(batchSize):
+        train_data.append(input_data[batch_counter])
+        train_result_data.append(input_data_result[batch_counter])
+        batch_counter += 1
+
+    if batch_counter>= len(input_data):
+        batch_counter = 0
+
+    b=Batch(train_data, y=train_result_data)
+
+    return b
+
 def main():
     script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
-    rel_path = 'test_data.csv'
+    rel_path = '../Bittrex Extract/brain_out.csv'
     abs_file_path = os.path.join(script_dir, rel_path)
 
     readCSVFile(abs_file_path)
