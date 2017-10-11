@@ -1,7 +1,14 @@
+import json
+import time
+
 from wallet import Wallet
 from getpass import _raw_input
 
-wallet = Wallet()
+settings = json.load(open("settings.json","r"))
+print(settings["key"])
+print(settings["secret"])
+wallet = Wallet(settings["key"], settings["secret"])
 wallet.start()
-wallet.buy("OMG",2,0.001)
+time.sleep(5)
+wallet.sell("OMG",0.000000001,0.001)
 c = _raw_input("Eingabe.")

@@ -25,16 +25,16 @@ class Hist_element:
 class Out_element1:
     def __init__(self,minutes, price, trans_amount, coin_amount, change_sm, change_md, change_lg, t0_price):
         self.minutes = minutes
-        self.price = price
-        self.trans_amount = trans_amount
-        self.coin_amount = coin_amount
-        self.change_sm = change_sm
-        self.change_md = change_md
-        self.change_lg = change_lg
-        self.t0_price = t0_price
+        self.price = "{:.16f}".format(float(price))
+        self.trans_amount = "{:.16f}".format(float(trans_amount))
+        self.coin_amount = "{:.16f}".format(float(coin_amount))
+        self.change_sm = "{:.16f}".format(float(change_sm))
+        self.change_md = "{:.16f}".format(float(change_md))
+        self.change_lg = "{:.16f}".format(float(change_lg))
+        self.t0_price = "{:.16f}".format(float(t0_price))
 
     def getIterable(self):
-        return [self.minutes, str(self.price), str(self.trans_amount), str(self.coin_amount), str(self.change_sm), str(self.change_md), str(self.change_lg), str(self.akt_price), str(self.t0_price)]
+        return [self.minutes, self.price, self.trans_amount, self.coin_amount, self.change_sm, self.change_md, self.change_lg, self.t0_price]
 
 #settings
 CHANGE_SM = 5*60 #seconds
@@ -93,7 +93,7 @@ def brain_result(b):
                 print("Output steht bevor")
                 coin_count, transactions, changesm, changemd, changelg = 0, 0, 0, 0, 0
                 akt_value = my_bitterx.get_ticker(store["market"])['result']['Last']
-                offset_value
+                offset_value = 0
                 for element in store["history"]:
                     if (datetime.utcnow().timestamp() - element.ts.timestamp()) < OFFSET:
                         offset_value = element.price
