@@ -1,3 +1,12 @@
-akt_Zeit;akt_Preis;transaktionen_letzten_5_min;übertragene_Coins_letzten_5_Minuten;Veränderung_letzten_5_Minuten;Veränderung_letzten_15_Minuten;Veränderung_letzten_30_Minuten
+akt_Zeit;akt_Preis;transaktionen_letzten_5_min;ï¿½bertragene_Coins_letzten_5_Minuten;Verï¿½nderung_letzten_5_Minuten;Verï¿½nderung_letzten_15_Minuten;Verï¿½nderung_letzten_30_Minuten;neuer akt_Preis
+
+0 = akt_Zeit
+1 = akt Preis
+2 = transaktionen_letzten_5_min
+3 = Ã¼bertragene Coins letzte 5 Minuten
+4 = verÃ¤nderung letzte 5 min 
+5 = verÃ¤nderung letzte 15 min 
+6 = verÃ¤nderung letzte 30 min
+7 = Preis in t+30 
 
 Output alle 5 Minuten
