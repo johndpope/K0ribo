@@ -9,13 +9,13 @@ input_data_result = []
 
 def train_neural_network():
     #von bis
-    input0 = [0,2000] # mit sicherheit anpassen
+    input0 = [0,1440]
     input1 = [0,1]
-    input2 = [0,100] # ggf anpassen
-    input3 = [0,10000000] # schlecht
+    input2 = [0,10000] # ggf anpassen
+    #input3 = [0,10000000] # schlecht
     input4 = [-2,2]
-    input5 = [-2,2]
-    input6 = [-2,2]
+    input5 = [-5,5]
+    input6 = [-10,10]
     input7 = [0,1] 
 
     inp_trans = np.array(input_data,np.float)
@@ -29,11 +29,12 @@ def train_neural_network():
     # 3 hidden layer mit je 6 neuronen
     # outputlayer mit einem output neuron
 
-    net = nl.net.newff([input0,input1,input2,input3,input4,input5,input6],[6,6,6,1])
+    net = nl.net.newff([input0,input1,input2,input4,input5,input6],[6,6,1])
 
     #print(net.ci)
     #print(net.co)
     #print(len(net.layers))
+    net.trainf= nl.train.train_gdx
 
     error = net.train(inp_trans,tar_trans,epochs = 9000,show=100, goal=0.000001)
     out = net.sim(inp_trans)
