@@ -1,0 +1,4 @@
+- Buy Funktion
+- Sell Funktion
+- Log Funktion (auflistung kauf/verkauf + gewinn?)
+- 
