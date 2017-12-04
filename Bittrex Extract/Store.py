@@ -59,10 +59,16 @@ class Store(threading.Thread):
                     #print(self.getMarket() + ": " + str(len(self.history)))
                     self.lock.release()
                     self.removeOld()
-                    print("Anfrage Abgeschlossen: "+self.market)
+                    #print("Anfrage Abgeschlossen:  "+self.market)
                     time.sleep(5)
-            except:
-                print("Fehler bei History-abfrage: "+self.market)
+            except Exception as e:
+                    with open("log.txt", "a") as log:
+                        log.write("***************************************************\n")
+                        log.write(str(datetime.timestamp()))
+                        log.write("Fehler beiHistory Abfrage: " + self.market + "\n")
+                        log.write(str(e)+"\n")
+                        log.write("***************************************************\n")
+
 
     def removeOld(self):
         if len(self.history) > 0:
