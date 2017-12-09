@@ -1,4 +1,4 @@
-akt_Zeit;akt_Preis;transaktionen_letzten_5_min;�bertragene_Coins_letzten_5_Minuten;Ver�nderung_letzten_5_Minuten;Ver�nderung_letzten_15_Minuten;Ver�nderung_letzten_30_Minuten;neuer akt_Preis
+﻿akt_Zeit;akt_Preis;transaktionen_letzten_5_min;�bertragene_Coins_letzten_5_Minuten;Ver�nderung_letzten_5_Minuten;Ver�nderung_letzten_15_Minuten;Ver�nderung_letzten_30_Minuten;neuer akt_Preis
 
 0 = akt_Zeit                            [0,1440]
 1 = akt Preis                           [0,1]
@@ -10,3 +10,5 @@ akt_Zeit;akt_Preis;transaktionen_letzten_5_min;�bertragene_Coins_letzten_5_Min
 6 = Preis in t+30                       [0,1]
 
 Output alle 5 Minuten
+
+volumen statt anzahl trnasaktionen

@@ -1,0 +1,33 @@
+Generell:
+
+CSV neu designen (Ja/Nein)
+	-attribute
+
+Bittrex buy/sell Schnittstellen
+Rahmenprogramm logik (Kaufen/wallet/Verkaufen/)
+ Verkauf
+	Trailing
+		StopLoss bei ca 5-10%
+	Wallet prüfen
+	
+ Kauf
+	Währung nur einmal Kuafen
+	
+	
+WebApp
+	Trade Übersicht
+	Force Buy
+	Force Sell
+
+Telegram Bot
+
+	
+David:
+
+Alles in eine DB
+History auf Ticks umstellen
+
+Mirco:
+
+Umstellung auf Tensorflow (Hotone)
+Ein netz pro Währung
