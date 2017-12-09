@@ -7,11 +7,16 @@ Bittrex buy/sell Schnittstellen
 Rahmenprogramm logik (Kaufen/wallet/Verkaufen/)
  Verkauf
 	Trailing
-		StopLoss bei ca 5-10%
+		StopLoss bei 5%
+	1.Versuch
+		Verkaufnetz + Trailing
+	2. Trailing
+	
 	Wallet prüfen
 	
  Kauf
 	Währung nur einmal Kuafen
+	Marge: 1%
 	
 	
 WebApp
@@ -30,4 +35,8 @@ History auf Ticks umstellen
 Mirco:
 
 Umstellung auf Tensorflow (Hotone)
+2 Netze
+	1. Kaufen
+	2. Verkaufen
+ 
 Ein netz pro Währung
