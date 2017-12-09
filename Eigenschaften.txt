@@ -13,5 +13,3 @@
 11 = Order Book Wall Buy
 12 = Order Book Wall Sell
 13 = Kaufen Ja/Nein                      [0,1]  >= Wenn Anstieg über 2*TradingFee + Marge(1%) Zukunft: 20 Min
-
-Output alle 5 Minuten
