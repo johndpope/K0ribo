@@ -1,12 +1,17 @@
-akt_Zeit;akt_Preis;transaktionen_letzten_5_min;�bertragene_Coins_letzten_5_Minuten;Ver�nderung_letzten_5_Minuten;Ver�nderung_letzten_15_Minuten;Ver�nderung_letzten_30_Minuten;neuer akt_Preis
-
-0 = akt_Zeit                            [0,1440]
-1 = akt Preis                           [0,1]
-2 = transaktionen_letzten_5_min         [0,10000]
-// fällt weg 3 = übertragene Coins letzte 5 Minuten  [0,]
-3 = veränderung letzte 5 min            [-2,2]
-4 = veränderung letzte 15 min           [-500,500]
-5 = veränderung letzte 30 min           [-1000,1000]
-6 = Preis in t+30                       [0,1]
+﻿
+0 = akt Preis     t=0                   
+1 = akt_Zeit                            
+2 = 24H Volumen                         
+3 = veränderung letzte 2 min in %       
+4 = veränderung letzte 10 min in %      
+5 = veränderung letzte 20 min in %     
+6 = veränderung letzte 30 min in %      
+7 = Anzahl offene Kaufaufträge
+8 = Anzahl offene Verkaufaufträge
+9 = Order Book Value Buy
+10 = Order Book Value Sell
+11 = Order Book Wall Buy
+12 = Order Book Wall Sell
+13 = Kaufen Ja/Nein                      [0,1]  >= Wenn Anstieg über 2*TradingFee + Marge(1%) Zukunft: 20 Min
 
 Output alle 5 Minuten
