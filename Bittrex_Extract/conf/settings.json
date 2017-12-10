@@ -1,0 +1,25 @@
+{
+    "change_sm" : 600, 
+    "change_md" : 1200, 
+    "change_lg" : 1800, 
+    "offset" : 1800, 
+    "interval": 30, 
+    "mongodb": {
+        "url": "localhost",
+        "port": 27017,
+        "db": "K0ribo"
+    },
+    "exchanges": [
+        {
+            "platform": "bittrex",
+            "api_key": "4b366c364fde4db7b05d0c083c495884",
+            "api_secret": "ca1dd3022ead477d989f75616e3c8461",
+            "markets": [
+                "BTC-NEO",
+                "BTC-OMG",
+                "BTC-ARK",
+                "BTC-LTC"
+            ]
+        }
+    ]
+}

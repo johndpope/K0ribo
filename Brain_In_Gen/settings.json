@@ -1,0 +1,22 @@
+{
+    "change_sm" : 600, //seconds
+    "change_md" : 1200, //seconds
+    "change_lg" : 1800, //seconds
+    "offset" : 1800, //time for future prediction
+    "interval": 30, //update rate in seconds
+    "mongodb": {
+        "url": "localhost",
+        "port": 27017,
+        "db": "K0ribo"
+    },
+    "exchanges": [
+        {
+            "plattform": "bittrex",
+            "markets": [
+                "BTC-NEO",
+                "BTC-OMG",
+                "BTC-NXT"
+            ]
+        }
+    ]
+}

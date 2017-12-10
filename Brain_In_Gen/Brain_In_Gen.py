@@ -6,27 +6,25 @@ from datetime import datetime
 from bittrex import Bittrex
 
 
-class Out_element1:
-    def __init__(self,minutes, price, trans_amount, coin_amount, change_sm, change_md, change_lg, t0_price):
+class Out_element:
+    def __init__(self,minutes, price, volume, change_sm, change_md, change_lg, buy):
         self.minutes = minutes
         self.price = "{:.16f}".format(float(price))
-        self.trans_amount = "{:.16f}".format(float(trans_amount))
-        self.coin_amount = "{:.16f}".format(float(coin_amount))
+        self.volume = volume
         self.change_sm = "{:.16f}".format(float(change_sm))
         self.change_md = "{:.16f}".format(float(change_md))
         self.change_lg = "{:.16f}".format(float(change_lg))
-        self.t0_price = "{:.16f}".format(float(t0_price))
+        self.buy = buy
 
     def getIterable(self):
-        return [self.minutes, self.price, self.trans_amount, self.change_sm, self.change_md, self.change_lg, self.t0_price]
+        return [self.minutes, self.price, self.volume, self.change_sm, self.change_md, self.change_lg, self.buy]
+
+
 
 class BrainDataGen(threading.Thread):
-    def __init__(self, stores, OFFSET, CHANGE_SM, CHANGE_MD, CHANGE_LG):
+    def __init__(self, stores, settings):
         self.stores = stores
-        self.OFFSET = OFFSET
-        self.CHANGE_SM = CHANGE_SM
-        self.CHANGE_MD = CHANGE_MD
-        self.CHANGE_LG = CHANGE_LG
+        self.settings = settings
         self.my_bittrex = Bittrex(None, None)
         threading.Thread.__init__(self)
 
