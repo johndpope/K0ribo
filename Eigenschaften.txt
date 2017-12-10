@@ -4,9 +4,9 @@
 1 = akt Preis                           [0,1]
 2 = transaktionen_letzten_5_min         [0,10000]
 // fällt weg 3 = übertragene Coins letzte 5 Minuten  [0,]
-3 = veränderung letzte 5 min            [-2,2]
-4 = veränderung letzte 15 min           [-500,500]
-5 = veränderung letzte 30 min           [-1000,1000]
+3 = veränderung letzte 5 min            [-1,2]
+4 = veränderung letzte 15 min           [-1,500]
+5 = veränderung letzte 30 min           [-1,1000]
 6 = Preis in t+30                       [0,1]
 
 Output alle 5 Minuten
