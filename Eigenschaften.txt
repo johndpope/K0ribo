@@ -1,4 +1,3 @@
-﻿
 0 = akt Preis     t=0                   
 1 = akt_Zeit                            
 2 = 24H Volumen                         
