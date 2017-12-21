@@ -4,9 +4,8 @@
     "change_lg" : 1800, 
     "offset" : 1800, 
     "interval": 30, 
-    "mongodb": {
-        "url": "localhost",
-        "port": 27017,
+    "sqlite": {
+        "url": "./sqlite_db",
         "db": "K0ribo"
     },
     "exchanges": [
