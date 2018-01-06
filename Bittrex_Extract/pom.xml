@@ -4,7 +4,7 @@
 
 	<groupId>K0ribo</groupId>
 	<artifactId>Bittrex_Extract</artifactId>
-	<version>0.0.1-Stable</version>
+	<version>0.0.2-Stable</version>
 	<packaging>jar</packaging>
 
 	<name>Bittrex_Extract</name>

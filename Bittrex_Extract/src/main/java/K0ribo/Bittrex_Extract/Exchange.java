@@ -28,5 +28,18 @@ public class Exchange {
 		this.markets = markets;
 	}
 	
-	
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("{ platform: ");
+		sb.append(this.platform);
+		sb.append(", markets: [");
+		for(String market : markets){
+			sb.append(market);
+			sb.append(", ");
+		}
+		sb.delete(sb.length()-3, sb.length()-1);
+		sb.append("]}");
+		return sb.toString();
+	}
 }

@@ -54,7 +54,7 @@ public class SQLWriter {
 						pstmt.setString(2, market);
 						pstmt.executeUpdate();
 					} catch (Exception e2) {
-						System.out.println("Eintrag existiert bereits");
+						System.out.println("Element: " + e.toString() + " existiert bereits");
 					}
 				}
 			}
@@ -86,6 +86,8 @@ public class SQLWriter {
 			stmt.setDouble(7, summary.getOb_value_buy());
 			stmt.setDouble(8, summary.getOb_value_sell());
 			stmt.executeUpdate();
+			Statement simpleStmt = this.c.createStatement();
+			simpleStmt.execute("BEGIN TRANSACTION;");
 			for (OrderBookEntry obe : summary.getOb_buy()) {
 				stmt = this.c.prepareStatement(this.INSERT_INTO_ORDERBOOK);
 				stmt.setInt(1, exchange_id);
@@ -104,6 +106,8 @@ public class SQLWriter {
 				stmt.setInt(5, 2);
 				stmt.executeUpdate();
 			}
+			simpleStmt = this.c.createStatement();
+			simpleStmt.execute("COMMIT;");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

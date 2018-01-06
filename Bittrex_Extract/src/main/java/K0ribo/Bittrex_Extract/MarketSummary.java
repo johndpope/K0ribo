@@ -1,6 +1,7 @@
 package K0ribo.Bittrex_Extract;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,6 +108,16 @@ public class MarketSummary {
 		this.ob_sell = ob_sell;
 	}
 
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("{ ts: ");
+		sb.append(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(this.ts));
+		sb.append(", volume: ");
+		sb.append(this.twentyfour_hour_vol);
+		sb.append("}");
+		return sb.toString();
+	}
 	
 	
 }
